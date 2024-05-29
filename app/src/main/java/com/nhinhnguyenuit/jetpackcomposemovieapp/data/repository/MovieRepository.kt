@@ -12,6 +12,10 @@ class MovieRepository @Inject constructor(
 ) {
     fun getAllMovies(): Flow<List<MovieEntity>> = movieDao.getAllMovies()
 
+    fun getMovie(id: Int) : MovieEntity{
+        return movieDao.getMovie(id)
+    }
+
     suspend fun insertMovie(movie: MovieEntity){
         movieDao.insertMovie(movie)
     }
